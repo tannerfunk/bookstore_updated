@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 //import movieData from '../MovieData.json';
-
+//instead of needing this file ^,we are pulling it from the database!
 import {Movie} from '../movie/movie'
 
 function MovieCollectionPage() {
 
   const [movieData, setMovieData] = useState<Movie[]>([]);
 
+  //the use effect makes it so that it only runs when it loads the first time the element is rendered!
   useEffect(() => {
     const fetchMovie = async () => {
       const rsp = await fetch('https://localhost:4000/movie')
